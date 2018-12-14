@@ -3,7 +3,8 @@
 function cache_services() {
     local SERVICE_YMLFILE=$1
 
-    local SERVICE_URL=${OS_SERVICES_REPO}/${REPO_VERSION}
+#    local SERVICE_URL=${OS_SERVICES_REPO}/${REPO_VERSION}
+    local SERVICE_URL=https://raw.githubusercontent.com/kingsd041/os-services/pingan
     local SERVICE_INDEX_URL="${SERVICE_URL}/index.yml"
     local SERVICE_YMLFILE_URL="${SERVICE_URL}/${SERVICE_YMLFILE}"
 
@@ -54,6 +55,9 @@ for file in $(ls .make-*); do
             ;;
         ".make-4glte")
             cache_services "m/modem-manager.yml"
+            ;;
+        ".make-pingan")
+            cache_services "p/pingan-amc.yml"
             ;;
         ".make-hyperv")
             cache_services "h/hyperv-vm-tools.yml"

@@ -65,6 +65,11 @@ hyperv: .dapper
 	APPEND_SYSTEM_IMAGES="rancher/os-modemmanager:v1.6.4-1" \
 	./.dapper release-4glte 2>&1 | tee dist/release.log
 
+pingan: .dapper
+	mkdir -p dist
+	APPEND_SYSTEM_IMAGES="cnrancher/os-pingan-amc:v0.1.7-1" \
+	./.dapper release-pingan 2>&1 | tee dist/release.log
+
 help:
 	@./scripts/help
 
